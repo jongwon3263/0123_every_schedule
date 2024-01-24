@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/streamlit_gspread_test/gspreadstreamlit-c4905c3ce953.json'
+json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
 credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
