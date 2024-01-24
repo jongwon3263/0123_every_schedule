@@ -10,13 +10,12 @@ st.set_page_config(
     layout="wide"
 )
 
-scope = [
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadstreamlit-c4905c3ce953.json', [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive',
-]
-
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadstreamlit-c4905c3ce953.json'
-gc = gspread.authorize(ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope))
+])
+gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
 doc = gc.open_by_url(spreadsheet_url)
 worksheet_name = '종원작업용'
