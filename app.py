@@ -23,17 +23,12 @@ doc = gc.open_by_url(spreadsheet_url)
 worksheet_name = '종원작업용'
 worksheet = doc.worksheet(worksheet_name)
 
-
-# Get all values from the worksheet
 data = worksheet.get_all_values()
 
-# Replace empty strings with a placeholder
 data = [[col if col != '' else 'EMPTY_COLUMN' for col in row] for row in data]
 
-# Create a Pandas DataFrame with cleaned column names
 df = pd.DataFrame(data[1:], columns=[col.strip() for col in data[0]])
 
-# Display the DataFrame using Streamlit
 st.write(df)
 st.markdown("---")
 
@@ -86,10 +81,8 @@ cols[2].text_area('메모장', height=500)
 
 work_number = cols[3].text_input("엑셀 번호로 찾기")
 
-work_number_index = int(work_number) - 1  # Adjust for 0-based indexing
-# Check if work_number is not an empty string
+work_number_index = int(work_number) - 1
 if work_number:
-    # Convert work_number to integer, adjusting for 0-based indexing
     try:
         work_number_index = int(work_number) - 1
         if 0 <= work_number_index < len(data):
