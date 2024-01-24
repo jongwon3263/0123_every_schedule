@@ -20,9 +20,7 @@ worksheet_name = '종원작업용'
 worksheet = doc.worksheet(worksheet_name)
 
 data = worksheet.get_all_values()
-
 data = [[col if col != '' else 'EMPTY_COLUMN' for col in row] for row in data]
-
 df = pd.DataFrame(data[1:], columns=[col.strip() for col in data[0]])
 
 st.write(df)
@@ -32,7 +30,6 @@ cols = st.columns((1, 1, 1, 1))
     
 region = cols[0].text_input('지역', key='시공 지역 선택')
 address_ = cols[0].text_input('주소')
-# day = cols[0].date_input('시공일')
 product_ = cols[0].text_input('상품군')
 detail_ = cols[0].text_input('상세 내역')
 start = cols[0].date_input('착수')
@@ -43,10 +40,8 @@ company_pay = cols[1].number_input('업체단가', value=0)
 customer_price = cols[1].number_input('고객단가', value=0)
 customer_name = cols[1].text_input('입금자명')
 down_payment = cols[1].number_input('계약금', value=50000)
-# balance_cal = str(customer_price - down_payment)
 today = str(datetime.today())
 today = today[5:11].replace("-", "/")
-# contract_date = cols[2].write('계약일: ' + today[:11] )
 manager_ = cols[1].radio('담당자', options=['홍진영', '박정재'])
 balance = customer_price - down_payment
 
@@ -91,7 +86,6 @@ else:
     st.error("work_number cannot be an empty string.")
 
 
-# 번호로 검색해서 조회한 값
 seleceted_region = v_lst[0]
 seleceted_address = v_lst[1]
 seleceted_product = v_lst[2]
