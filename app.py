@@ -90,6 +90,8 @@ if work_number:
 else:
     st.error("work_number cannot be an empty string.")
 
+
+# 번호로 검색해서 조회한 값
 seleceted_region = v_lst[0]
 seleceted_address = v_lst[1]
 seleceted_product = v_lst[2]
@@ -98,7 +100,6 @@ seleceted_start = v_lst[4]
 str_selected_start = str(start)
 str_selected_start = str_selected_start.replace("-", "/")
 str_selected_start = str_selected_start[5:]
-
 seleceted_finish = v_lst[5]
 seleceted_customer_phone = v_lst[6]
 seleceted_company = v_lst[7]
