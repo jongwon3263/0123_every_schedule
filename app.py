@@ -16,7 +16,7 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
+json_file_path = 'everyhome01gspread-e1e18c6b666d.json'
 
 try:
     with open(json_file_path, 'r') as file:
