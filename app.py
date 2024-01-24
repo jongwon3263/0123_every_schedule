@@ -10,10 +10,14 @@ st.set_page_config(
     layout="wide"
 )
 
-scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
-gc = gspread.authorize(credentials)
+scope = [
+'https://spreadsheets.google.com/feeds',
+'https://www.googleapis.com/auth/drive',
+]
+
+json_file_name = '/Users/gwonjong-won/Desktop/Program/고객 정보 조회/gspreadtest-375317-2426aad55bda.json'
+crdntl = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+gc = gspread.authorize(crdntl)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
 doc = gc.open_by_url(spreadsheet_url)
 worksheet_name = '종원작업용'
