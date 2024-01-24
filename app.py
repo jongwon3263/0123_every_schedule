@@ -16,13 +16,13 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = 'everyhome01gspread-e1e18c6b666d.json'
+my_json_file = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
 
 try:
-    with open(json_file_path, 'r') as file:
-        credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_path, scope)
+    with open(my_json_file, 'r') as file:
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
 except FileNotFoundError:
-    st.error(f"File not found: {json_file_path}")
+    st.error(f"File not found: {my_json_file}")
     st.stop()  # Stop the execution if the file is not found
 except Exception as e:
     st.error(f"An error occurred while loading credentials: {e}")
