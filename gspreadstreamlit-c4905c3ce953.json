@@ -1,0 +1,17 @@
+{
+    "type": "service_account",
+    "project_id": "gspreadstreamlit",
+    "private_key_id": "c4905c3ce9537610d425edc6fa9dc12cb51c3d78",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDZd3/P75MEjZNI\nh/OhQYBhURo1j5VH1WQ9X/aLP31uZPOqnIRroCy5qJ3qz44mDNkL9rmD7CtVLqUK\nqr4p6AAPx55b1aZTthDczcAbJvuihqTUFvF/S3gRu9taKBXvx6Pb7Ija1qyHYF/i\nU8SypUodHiWFFTXoKFI2CgTsiCDECiiqFAaJWnoJiN0JUH/xADfwajBm969nNtID\n96KNL3Cv+OxSrsWmBNFryEAjEhXjxl2nrjfEiHdyc5kHH4JnpY7JwGI1A81Y2ZOL\nxsnu6+7e5TsCTm3FGTOeSXAppAvVtCDUeAarDWPEgEibF5xFeFbHAxV7zvV/oxXA\n9zOrWk9jAgMBAAECggEAJRkJqMNJ5UDxmzH2EdBGwlM/kVuJL9PrYbz5JhASqb53\nAufofyO3/YQSTHhT25HdhPj19NdZHRLz/Lnb7vIw8IAxN6Fe2nD4t3IyD2+7BaLK\ng5PWZszNEtllNiAYfeskvOPBBPQSQpXiRY3cxE0GM6ls5SMVKyGVxLo41ND0Jfz1\nESru30bXScbEqq3SXW5BGoVtfuS7/dEU0Mzph72nuki9X4PrVEWeiVbM4g03JiVI\nUIIZsqu0E7Czjdq9rTEFbE+O5fJWjpca8aB8xDxc6aTkUhG0UtbguJ/WMPd2/t+z\nC34c2MWShcZMgthn6k0doTa1Vtkf/C19srd6ccoSQQKBgQD35uvwvcW9K/q9WIKF\nDdFuayabqaP7+TW9D3C7zrfQigqfSubeEJEHdqguc9HRUGzVHVhboieC2dBhjCVq\nDzef70XVUornzDd9SfxPDdOcMJdY9tMzCWCwzJu9PKADuuwa++SOzgiZqmXepUKp\nFV1lTvDX++nWjqU0vF6U6uPbuQKBgQDgkhAtveUBXLrDymS3fiR4iQ2KkMMaOrAl\nTp0ySuWMXZuxUWQv7+xxaWqqcNQpYymTCE+UxDCfnNU+SpBRIlQLTt6tu1WH1E/N\nVTizvc5hv2QA1/XRBgUvBg5yhKeGQ9gw0jrMnJL04/QTeJq5ygxKQpLeZC2BX4J2\nIAv/5utp+wKBgQCMd8WzaOS110jBp3h1iinkpkR/KbWonkJr+WbIlE6llMKGFjwR\nElQLZZnQkIIQV8EDVRhu+8flpiQkUfQVT8AWGM96G8Znp9i9XoHgDZadRw9LMrjj\nj2nBZH7O0J5e3rjQZXDR1j8bS2ljqkLGaju8nulriOusTrGf2yjAuwQXyQKBgQDK\nKfOymf6syUPAulUM8tv2PrsYANYCqM6l5y2QduhLAoIEkNb2aLCcMGA767KzR3fH\ny3WI4U08gz1dBFcDEzpBq9C+6aRH0RO+L3gKJ1bBnEB0mfXLI/ZKrNMYuN7u+eiH\nmtogFNwe5Y92b94qXv/NYj1BQ0HL86VInfTvfHx1PQKBgQCCaS72x+SBRee3UmyC\nsVV8vAsaWsH0blAEndMgzmETNBoCpUfJPkOkYf6EE3gTdRxZQUiEl9Ko1uTV1feh\nsNSnooU52D6fktxT79r6tYG4VhMJqpkFq5x+KcE4/qkz+UIXDKAP1P7WXGtdqJn2\nD+bC8zya5P/Z8xy698IqabiHRg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "everyhomedata@gspreadstreamlit.iam.gserviceaccount.com",
+    "client_id": "104464215297752014890",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/everyhomedata%40gspreadstreamlit.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com",
+    "date": "2024-01-15",
+    "date1": "2024-01-17",
+    "date2": "2024-01-19",
+    "date3": "2024-01-14T01:20:08.205611"
+}
