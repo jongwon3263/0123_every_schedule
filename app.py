@@ -16,8 +16,18 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+json_file_path = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
+
+try:
+    with open(json_file_path, 'r') as file:
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_path, scope)
+except FileNotFoundError:
+    st.error(f"File not found: {json_file_path}")
+    st.stop()  # Stop the execution if the file is not found
+except Exception as e:
+    st.error(f"An error occurred while loading credentials: {e}")
+    st.stop()  # Stop the execution if there is an error loading credentials
+
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
 doc = gc.open_by_url(spreadsheet_url)
