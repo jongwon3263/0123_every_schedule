@@ -23,10 +23,10 @@ try:
         credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
 except FileNotFoundError:
     st.error(f"파일을 찾을 수 없습니다: {my_json_file}")
-    st.stop()  # Stop the execution if the file is not found
+    st.stop()
 except Exception as e:
     st.error(f"An error occurred while loading credentials: {e}")
-    st.stop()  # Stop the execution if there is an error loading credentials
+    st.stop()
 
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
