@@ -3,6 +3,7 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
+import os
 
 st.set_page_config(
     page_icon="🐶",
@@ -16,7 +17,7 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
+json_file_name = os.environ.get("JSON_KEY_PATH")
 if json_file_name is not None:
     credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scopes=scope, token_uri="https://oauth2.googleapis.com/token")
 else:
