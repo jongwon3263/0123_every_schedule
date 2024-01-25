@@ -82,7 +82,7 @@ message_for_worker += f"\n\n{detail_}\n\n{address_}\n{customer_phone} ({customer
 
 cols[2].text_area('메모장', height=500)
 
-work_number = cols[3].text_input("엑셀 번호로 찾기")
+work_number = cols[3].text_input("엑셀 번호로 찾기(엑셀의 실제 행 번호 입력)")
 
 work_number_index = int(work_number) - 1
 if work_number:
