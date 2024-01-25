@@ -16,7 +16,7 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_name = '/Users/gwonjong-won/Desktop/Program/고객 정보 조회/gspreadtest-375317-2426aad55bda.json'
+json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
 credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
 
 gc = gspread.authorize(credentials)
