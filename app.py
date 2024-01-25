@@ -37,7 +37,7 @@ df = pd.DataFrame(data[1:], columns=columns)
 df.index = [str(i + 1) for i in range(len(df))]
 
 
-
+st.header("일정 추가")
 cols = st.columns((1, 1, 1, 1))
     
 region = cols[0].text_input('지역', key='시공 지역 선택')
@@ -136,4 +136,5 @@ if st.button('일정 추가'):
     cols[3].text_area('신규 일정 메시지', message_for_worker, height=500)
     
 st.markdown("---")
+st.header("일정 표")
 st.write(df)
