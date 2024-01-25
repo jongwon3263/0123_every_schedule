@@ -13,14 +13,13 @@ st.set_page_config(
 
 # jsonFile = os.environ.get("JSON_KEY_PATH")
 # st.write(f"JSON_KEY_PATH: {jsonFile}")
-jsonFile = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e4a88aeaed19.json'
+jsonFile = 'everyhome01gspread-e4a88aeaed19.json'
 
 scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
     ]
 
-XXX_str = json.load(open(jsonFile,"r", encoding='utf-8'))
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonFile, scope)
 gc = gspread.authorize(credentials)
