@@ -3,7 +3,6 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-import os
 
 st.set_page_config(
     page_icon="🐶",
