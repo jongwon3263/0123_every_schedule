@@ -3,6 +3,7 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
+
 import json
 
 st.set_page_config(
@@ -11,17 +12,14 @@ st.set_page_config(
     layout="wide"
 )
 
+# JSON 키 파일 경로
+json_keyfile = "/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json"  # JSON 키 파일의 경로
 
-scope = [
-'https://spreadsheets.google.com/feeds',
-'https://www.googleapis.com/auth/drive',
-]
+# 구글 스프레드시트 연결
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_keyfile, scope)
+gc = gspread.authorize(credentials)
 
-json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
-with open(json_file_name, 'r') as file_obj:
-    client_credentials = json.load(file_obj)
-
-gc = gspread.authorize(client_credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
 doc = gc.open_by_url(spreadsheet_url)
 worksheet_name = '종원작업용'
