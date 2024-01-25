@@ -11,7 +11,6 @@ st.set_page_config(
     layout="wide"
 )
 
-
 scope = [
 'https://spreadsheets.google.com/feeds',
 'https://www.googleapis.com/auth/drive',
