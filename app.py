@@ -18,15 +18,7 @@ scope = [
 
 my_json_file = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
 
-try:
-    with open(my_json_file, 'r') as file:
-        credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
-except FileNotFoundError:
-    st.error(f"파일을 찾을 수 없습니다: {my_json_file}")
-    st.stop()
-except Exception as e:
-    st.error(f"An error occurred while loading credentials: {e}")
-    st.stop()
+credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
 
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
