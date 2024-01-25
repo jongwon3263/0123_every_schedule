@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import datetime
 from google.oauth2.service_account import Credentials
 import json
+import os
 
 st.set_page_config(
     page_title="에브리홈 스케쥴 0.1",
@@ -15,7 +16,8 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
+json_file_path = os.path.abspath('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json')
+
 
 with open(json_file_path, 'r') as json_file:
     credentials_info = json.load(json_file)
