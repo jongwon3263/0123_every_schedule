@@ -1,5 +1,5 @@
 streamlit
 gspread
 pandas
-google-auth
+oauth2client
 datetime
