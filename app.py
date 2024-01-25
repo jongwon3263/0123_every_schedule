@@ -17,9 +17,12 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = os.path.abspath('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json')
+json_file_path = os.environ.get('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json')
+if not json_file_path:
+    raise ValueError("JSON_FILE_PATH environment variable is not set.")
 
-st.write(f"Is the file present? {os.path.exists(json_file_path)}")
+
+# st.write(f"Is the file present? {os.path.exists(json_file_path)}")
 with open(json_file_path, 'r') as json_file:
     credentials_info = json.load(json_file)
 
