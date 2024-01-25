@@ -14,9 +14,6 @@ st.set_page_config(
 json_key_path = os.environ.get("JSON_KEY_PATH")
 st.write(f"JSON_KEY_PATH: {json_key_path}")
 
-# JSON 키 파일 경로가 없을 경우 에러 처리
-if json_key_path is None:
-    raise ValueError("JSON_KEY_PATH environment variable is not set.")
 
 # 구글 스프레드시트 연결
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
