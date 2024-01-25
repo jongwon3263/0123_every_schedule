@@ -3,8 +3,7 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-
-import json
+import os
 
 st.set_page_config(
     page_icon="🐶",
@@ -12,12 +11,15 @@ st.set_page_config(
     layout="wide"
 )
 
-# JSON 키 파일 경로
-json_keyfile = "/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json"  # JSON 키 파일의 경로
+json_file_path = os.environ.get("JSON_KEY_PATH")
+
+# JSON 키 파일 경로가 없을 경우 에러 처리
+if json_file_path is None:
+    raise ValueError("JSON_KEY_PATH environment variable is not set.")
 
 # 구글 스프레드시트 연결
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_keyfile, scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_path, scope)
 gc = gspread.authorize(credentials)
 
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
