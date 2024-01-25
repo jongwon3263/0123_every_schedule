@@ -137,4 +137,5 @@ if st.button('일정 추가'):
     
 st.markdown("---")
 st.header("일정 표")
+st.write("행 번호가 구글시트의 실제 행 번호와 다름")
 st.write(df)
