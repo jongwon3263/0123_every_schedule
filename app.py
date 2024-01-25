@@ -25,7 +25,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonFile, scope)
 gc = gspread.authorize(credentials)
 spreadsheet_key = '1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI'
 doc = gc.open_by_key(spreadsheet_key)
-worksheet_name = '종원작업용'
+worksheet_name = 'everyhomeNew2024'
 worksheet = doc.worksheet(worksheet_name)
 
 data = worksheet.get_all_values()
