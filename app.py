@@ -2,11 +2,10 @@ import streamlit as st
 import gspread
 import pandas as pd
 from datetime import datetime
-from google.oauth2.service_account import Credentials
-import json
-import os
+from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(
+    page_icon="🐶",
     page_title="에브리홈 스케쥴 0.1",
     layout="wide"
 )
@@ -17,16 +16,8 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = os.environ.get('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json')
-if not json_file_path:
-    raise ValueError("JSON_FILE_PATH environment variable is not set.")
-
-
-# st.write(f"Is the file present? {os.path.exists(json_file_path)}")
-with open(json_file_path, 'r') as json_file:
-    credentials_info = json.load(json_file)
-
-credentials = Credentials.from_service_account_info(credentials_info, scopes=scope)
+json_file_name = '/Users/gwonjong-won/Desktop/Program/고객 정보 조회/gspreadtest-375317-2426aad55bda.json'
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
 
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
