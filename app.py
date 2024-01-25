@@ -3,7 +3,7 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-import os
+import json
 
 st.set_page_config(
     page_icon="🐶",
@@ -19,6 +19,8 @@ scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
     ]
+
+XXX_str = json.load(open(json_key_path, encoding='utf-8'))
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
 gc = gspread.authorize(credentials)
