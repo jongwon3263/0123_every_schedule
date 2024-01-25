@@ -2,8 +2,9 @@ import streamlit as st
 import gspread
 import pandas as pd
 from datetime import datetime
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 import os
+import json
 
 st.set_page_config(
     page_icon="🐶",
@@ -16,9 +17,13 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-my_json_file = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
+json_file_path = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e1e18c6b666d.json'
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
+# Use with open statement to open and read the JSON file
+with open(json_file_path, 'r') as json_file:
+    credentials_info = json.load(json_file)
+
+credentials = Credentials.from_service_account_info(credentials_info, scopes=scope)
 
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
