@@ -6,7 +6,6 @@ from google.oauth2.service_account import Credentials
 import json
 
 st.set_page_config(
-    page_icon="🐶",
     page_title="에브리홈 스케쥴 0.1",
     layout="wide"
 )
