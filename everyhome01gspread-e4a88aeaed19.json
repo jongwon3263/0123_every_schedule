@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "everyhome01gspread",
+  "private_key_id": "e4a88aeaed1952f46c835b2729cdd303f2fed902",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCBOww9WgHVQsL5\nFC7tvGEs1lLrfvANqQz3UxtsRMrIxcDlNLhbW+oYa4zkKuu9lnoqOU1brdEetPVw\nLZohqKDf4MZUJRRNavrqHEZvXfeNpNG8/8jzGH+JI8rqV0sk+LDGOMWX2dBbhk/N\nVK5brnO5NYXezzHEKQ50gSZzbF9fgqrTDdL8XYX66nTTvBlSju7V/YaP3bnYHb+r\ngXEI7vVg6m+pqLYIBhNJaC1uB+xCvgWgPnFxNg9zLv7VN/KVPOKyQy0zEBEmZn1m\nxymlghGTWMRLMyt0SmQknmGUMGusLUP9jx/DzUBUer5ly0/ZJ53r3ubO4rZDH1sL\n+FMm81CLAgMBAAECggEAJ/H6Dw6+yU45GSe5d8fGW8cl22Ah0H8kIGDidZ1v9w5V\nWSPqJmcrXYAFDVQNCU21lk6fEEsSfETgJtwZq/TFQV5nv4O0mleKlonF5c+sYO6E\n3EBOO4Ijjd7v7m6sLhHnBmZvAUiVBG1oRmY5/OHYKHQYXK47ylAMhUuUeJITiuBW\n/k/JN3mj2mo9b7uspw+NS1hX9ZGBZv4bz9yxzWGi4zZHDKOW1DMlYPku2A6U92qC\negFy4EqJ6MZAjMqn5ImNBYI1e8pz4ptIsbk5bzHTb6hbRpvgOvxrNUJlzyyzBu5h\nD0cibTY5qETOZ6uz+sba2WWwVuTL2twpCWR3J0u0sQKBgQC2CwkeSPPYOdEVMS3Y\n6kL+qwBSPck0VbSsyO18F554jpl/ipw5uM6PZpOK57l3TWb1zG7/zA0p+lw6Kzyf\nV11WskE4BCtNos9S/YtK/re3Z/ZmeNEra7CBw5cCVc4L7uayVjuW9VhwG+IYTomf\nGd5VxpcCMNrWOFLIIe0xNXfJmwKBgQC1u2CniseGg8nBEaE4u80hjKk2i8A7K6le\nVIDKT0x6aOTNvHuBLwyHRxTcIpFLk9s2HKPXJrSrLBMyA5I8xsYU/NBWZuJKeSgB\nFKjonFlHQ6gjSUqhJfFqAA4gNTwZcVh9H1I/xwlKZGdnxtGglzcqJ3XVOvi7h/PO\nw4gDhaM70QKBgFJZ1askl2K2bPYoRDQ/bUUleES7/Jw3NT+AuaYMTTz+TUQcISYf\nixnl7lLFFup4Ul5ZN9FxrnbR8gzCaG8wp2HDy6saf7hkMWO6nNu1NMi8OAQNHZqF\n4dgh8ds1k7tkPGpqhhR5MqOsiXAzfyBBJIorBz8PeL+1xQUSC+nZ5TGHAoGBAKkW\nU6LvdB/LJP/3WEtCKWVKy/JNayliwW5cL4yM5bqLOD/YXA1hakW/tD/yBcANLQwW\n77Zyc+1D0ARb4EeeJpVGeM27YlcqjTccMuBjAIpW/+z892wispEOxhXfkjCWDmA0\nsUFX/mPyMWgUS90gdRpKps8j1GQf5Y/+y+GDCNLRAoGBALQ7/WXOUXYWWQz98phf\nbfwQ3QSc9RWkfWo2NmG2bZWl4ye5/XtgTHkL9vuEVhgFlRFbnQy8SdF0gcMi28rO\nIlohKgTvcaC6z4gx7sLe1wujgCGrhD76XoQ7uUyeO6judYopIASCFnm2ngUbBNGe\ng+ebOuFrfIgVCHV0ZLGHuHET\n-----END PRIVATE KEY-----\n",
+  "client_email": "everyhome4u@everyhome01gspread.iam.gserviceaccount.com",
+  "client_id": "115084962643794924754",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/everyhome4u%40everyhome01gspread.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
