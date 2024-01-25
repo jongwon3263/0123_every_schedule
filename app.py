@@ -3,7 +3,6 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-import os
 
 st.set_page_config(
     page_icon="🐶",
@@ -17,8 +16,11 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_name = os.path.abspath('/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json')
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
+if json_file_name is not None:
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+else:
+    st.error("JSON key file path is not configured properly.")
 
 gc = gspread.authorize(credentials)
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
