@@ -16,7 +16,7 @@ scope = [
 'https://www.googleapis.com/auth/drive',
 ]
 
-json_file_path = 'gspreadtest-375317-2426aad55bda.json'
+json_file_path = ''
 
 # Use with open statement to open and read the JSON file
 with open(json_file_path, 'r') as json_file:
