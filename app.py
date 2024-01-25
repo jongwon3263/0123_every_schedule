@@ -12,6 +12,7 @@ st.set_page_config(
 )
 
 json_file_path = os.environ.get("JSON_KEY_PATH")
+st.write(f"JSON_KEY_PATH: {json_file_path}")
 
 # JSON 키 파일 경로가 없을 경우 에러 처리
 if json_file_path is None:
