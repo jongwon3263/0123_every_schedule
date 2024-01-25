@@ -30,7 +30,11 @@ worksheet = doc.worksheet(worksheet_name)
 
 data = worksheet.get_all_values()
 data = [[col if col != '' else 'EMPTY_COLUMN' for col in row] for row in data]
-df = pd.DataFrame(data[1:], columns=[col.strip() for col in data[0]])
+columns = [col.strip() for col in data[0]]
+df = pd.DataFrame(data[1:], columns=columns)
+
+# 데이터 프레임의 인덱스를 구글 시트의 행 번호로 설정
+df.index = [str(i + 1) for i in range(len(df))]
 
 st.write(df)
 st.markdown("---")
