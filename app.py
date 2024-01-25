@@ -36,8 +36,7 @@ df = pd.DataFrame(data[1:], columns=columns)
 # 데이터 프레임의 인덱스를 구글 시트의 행 번호로 설정
 df.index = [str(i + 1) for i in range(len(df))]
 
-st.write(df)
-st.markdown("---")
+
 
 cols = st.columns((1, 1, 1, 1))
     
@@ -135,3 +134,6 @@ cols[3].text_area('찾은 일정 메시지', message_for_worker_2, height=500)
 if st.button('일정 추가'):
     worksheet.append_row(customer_info)
     cols[3].text_area('신규 일정 메시지', message_for_worker, height=500)
+    
+st.markdown("---")
+st.write(df)
