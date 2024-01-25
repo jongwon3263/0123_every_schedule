@@ -3,7 +3,6 @@ import gspread
 import pandas as pd
 from datetime import datetime
 from google.oauth2.service_account import Credentials
-import os
 import json
 
 st.set_page_config(
