@@ -22,7 +22,7 @@ try:
     with open(my_json_file, 'r') as file:
         credentials = ServiceAccountCredentials.from_json_keyfile_name(my_json_file, scope)
 except FileNotFoundError:
-    st.error(f"File not found: {my_json_file}")
+    st.error(f"파일을 찾을 수 없습니다: {my_json_file}")
     st.stop()  # Stop the execution if the file is not found
 except Exception as e:
     st.error(f"An error occurred while loading credentials: {e}")
