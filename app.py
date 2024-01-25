@@ -18,7 +18,7 @@ scope = [
 
 json_file_name = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/gspreadtest-375317-2426aad55bda.json'
 if json_file_name is not None:
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name, scopes=scope, token_uri="https://oauth2.googleapis.com/token")
 else:
     st.error("JSON key file path is not configured properly.")
 
