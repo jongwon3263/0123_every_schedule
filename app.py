@@ -11,16 +11,16 @@ st.set_page_config(
     layout="wide"
 )
 
-json_file_path = os.environ.get("JSON_KEY_PATH")
-st.write(f"JSON_KEY_PATH: {json_file_path}")
+json_key_path = os.environ.get("JSON_KEY_PATH")
+st.write(f"JSON_KEY_PATH: {json_key_path}")
 
 # JSON 키 파일 경로가 없을 경우 에러 처리
-if json_file_path is None:
+if json_key_path is None:
     raise ValueError("JSON_KEY_PATH environment variable is not set.")
 
 # 구글 스프레드시트 연결
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_path, scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
 gc = gspread.authorize(credentials)
 
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing'
