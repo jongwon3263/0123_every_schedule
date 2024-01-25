@@ -11,18 +11,18 @@ st.set_page_config(
     layout="wide"
 )
 
-# json_key_path = os.environ.get("JSON_KEY_PATH")
-# st.write(f"JSON_KEY_PATH: {json_key_path}")
-json_key_path = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e4a88aeaed19.json'
+# jsonFile = os.environ.get("JSON_KEY_PATH")
+# st.write(f"JSON_KEY_PATH: {jsonFile}")
+jsonFile = '/Users/gwonjong-won/Documents/0./Projects/0123_every_schedule/everyhome01gspread-e4a88aeaed19.json'
 
 scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
     ]
 
-XXX_str = json.load(open(json_key_path,"r", encoding='utf-8'))
+XXX_str = json.load(open(jsonFile,"r", encoding='utf-8'))
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name(json_key_path, scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(jsonFile, scope)
 gc = gspread.authorize(credentials)
 spreadsheet_key = '1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI'
 doc = gc.open_by_key(spreadsheet_key)
