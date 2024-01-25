@@ -3,4 +3,3 @@ gspread
 pandas
 google-auth
 datetime
-json
