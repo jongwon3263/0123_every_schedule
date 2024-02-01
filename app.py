@@ -180,7 +180,6 @@ if st.button('조회'):
 else:
     st.write("검색어와 날짜 범위를 입력하고 '조회' 버튼을 클릭하면 결과가 표시됩니다.")
     
-# st.write("행 번호가 구글시트의 실제 행 번호와 다름")
 st.markdown("---")
 expander = st.expander("전체 일정 보기")
 expander.write(df)
