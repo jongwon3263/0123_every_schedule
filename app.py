@@ -147,8 +147,7 @@ if st.button('일정 추가'):
 st.markdown("---")
 st.header("일정 조회")
 
-# 사용자로부터 검색 키워드 입력 받기
-search_query = st.text_input("검색어를 입력하세요")
+
 
 current_year = datetime.now().year
 df['마감_변환'] = pd.to_datetime(df['마감'].apply(lambda x: f"{current_year}/{x}"), format='%Y/%m/%d')  # '마감' 컬럼의 날짜 형식에 맞게 조정
@@ -159,6 +158,9 @@ cols2 = st.columns((1, 1, 1, 1))
 # 사용자로부터 날짜 범위 입력 받기
 start_date = cols2[0].date_input("마감일 검색")
 end_date = cols2[1].date_input("", value=latest_finish_date)
+
+# 사용자로부터 검색 키워드 입력 받기
+search_query = st.text_input("검색어를 입력하세요")
 
 
 # '조회' 버튼 추가
