@@ -42,7 +42,16 @@ cols = st.columns((1, 1, 1, 1))
     
 region = cols[0].text_input('지역', key='시공 지역 선택')
 address_ = cols[0].text_input('주소')
-product_ = cols[0].text_input('상품군')
+
+# 상품군 선택 라디오 버튼 추가
+product_group_selection = cols[0].radio('상품군', options=['청소', '직접 입력'])
+
+# 상품군 선택에 따른 상품군 입력 필드 동작 변경
+if product_group_selection == '청소':
+    product_ = '청소'  # '청소'를 자동으로 입력
+else:
+    product_ = cols[0].text_input('')  # 사용자가 직접 입력
+    
 detail_ = cols[0].text_input('상세 내역')
 start = cols[0].date_input('착수')
 finish = cols[0].date_input('마감')
@@ -82,7 +91,7 @@ message_for_worker += f"\n\n{detail_}\n\n{address_}\n{customer_phone} ({customer
 
 cols[2].text_area('메모장', height=500)
 
-work_number = cols[3].text_input("엑셀 번호로 찾기(엑셀의 실제 행 번호 입력)")
+work_number = cols[3].text_input("엑셀 번호로 찾기(엑셀의 실제 행 번호 입력)", value=1)
 
 work_number_index = int(work_number) - 1
 if work_number:
@@ -136,6 +145,43 @@ if st.button('일정 추가'):
     cols[3].text_area('신규 일정 메시지', message_for_worker, height=500)
     
 st.markdown("---")
-st.header("일정 표")
-st.write("행 번호가 구글시트의 실제 행 번호와 다름")
-st.write(df)
+st.header("일정 조회")
+
+# 사용자로부터 검색 키워드 입력 받기
+search_query = st.text_input("검색어를 입력하세요")
+
+current_year = datetime.now().year
+df['마감_변환'] = pd.to_datetime(df['마감'].apply(lambda x: f"{current_year}/{x}"), format='%Y/%m/%d')  # '마감' 컬럼의 날짜 형식에 맞게 조정
+
+# 가장 늦은 마감 날짜 찾기
+latest_finish_date = df['마감_변환'].max()
+cols2 = st.columns((1, 1, 1, 1))
+# 사용자로부터 날짜 범위 입력 받기
+start_date = cols2[0].date_input("마감일 검색")
+end_date = cols2[1].date_input("", value=latest_finish_date)
+
+
+# '조회' 버튼 추가
+if st.button('조회'):
+    # 날짜 필터링
+    mask_date = (df['마감_변환'] >= pd.Timestamp(start_date)) & (df['마감_변환'] <= pd.Timestamp(end_date))
+
+    # 키워드가 입력되었으면 키워드 필터링 적용
+    if search_query:
+        mask_keyword = df.apply(lambda row: row.astype(str).str.contains(search_query, case=False, na=False).any(), axis=1)
+        mask_combined = mask_date & mask_keyword
+    else:
+        mask_combined = mask_date
+
+    # 필터링된 데이터 프레임을 표시
+    filtered_df = df[mask_combined]
+    st.subheader("검색 결과")
+    st.dataframe(filtered_df.drop(columns=['마감_변환']), height=1000)  # 임시로 추가한 날짜 변환 컬럼을 제외하고 표시
+else:
+    st.write("검색어와 날짜 범위를 입력하고 '조회' 버튼을 클릭하면 결과가 표시됩니다.")
+    
+# st.write("행 번호가 구글시트의 실제 행 번호와 다름")
+st.markdown("---")
+expander = st.expander("전체 일정 보기")
+expander.write(df)
+
