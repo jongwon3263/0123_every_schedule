@@ -150,7 +150,7 @@ st.header("일정 조회")
 
 
 current_year = datetime.now().year
-df['마감_변환'] = pd.to_datetime(df['마감'].apply(lambda x: f"{current_year}/{x}"), format='%Y/%m/%d')  # '마감' 컬럼의 날짜 형식에 맞게 조정
+df['마감_변환'] = pd.to_datetime(df['마감'].apply(lambda x: f"{current_year}/{x}"), format='%Y/%m/%d')
 
 # 가장 늦은 마감 날짜 찾기
 latest_finish_date = df['마감_변환'].max()
